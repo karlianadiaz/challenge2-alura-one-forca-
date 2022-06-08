@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da forca - Oracle</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/cadastro-palavras.css" />
+    <link rel="stylesheet" href="css/adivinha-palavra.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/mensagem.css" />
+  </head>
+  <body>
+    <header>
+      <img src="img/Vector.png" alt="Logo da Alura" class="logo" />
+    </header>
+
+    <main>
+      <section id="botoes-inicio">
+        <button class="botao botao-comecar">Começar a jogar</button>
+        <button class="botao botao-adicionar">Adicionar nova palavra</button>
+      </section>
+
+      <section id="cadastro-palavras">
+        <div>
+          <textarea
+            class="input-frase"
+            placeholder="Digite uma palavra ou frase"
+            name=""
+            id="textarea-frase"
+            rows="4"
+            minlength="2"
+            maxlength="8"
+            autocapitalize="characters"
+          ></textarea>
+        </div>
+        <div class="botoes-salvar-cancelar">
+          <p class="texto-max">Máx. de 8 letras</p>
+          <button class="botao-salvar">Salvar e começar</button>
+          <button class="botao-cancelar">Cancelar</button>
+        </div>
+      </section>
+
+      <section id="adivinha-palavra">
+        <div class="container-forca">
+          <svg class="forca">
+            <!-- Forca -->
+            <!-- Vertical -->
+            <line x1="100" y1="6" x2="100" y2="351" class="forca-parte" />
+            <!-- Topo -->
+            <line x1="100" y1="5" x2="250" y2="5" class="forca-parte" />
+            <!-- Corda -->
+            <line x1="250" y1="5" x2="250" y2="50" class="forca-parte" />
+            <!-- Piso -->
+            <line x1="3" y1="349" x2="341" y2="349" />
+
+            <!-- Cabeça -->
+            <circle cx="250" cy="75" r="25" class="forca-parte" />
+
+            <!-- corpo -->
+            <line x1="250" y1="100" x2="250" y2="231" class="forca-parte" />
+            <!-- braços -->
+            <line x1="250" y1="100" x2="220" y2="150" class="forca-parte" />
+            <line x1="280" y1="150" x2="250" y2="100" class="forca-parte" />
+            <!-- pernas -->
+            <line x1="250" y1="231" x2="220" y2="280" class="forca-parte" />
+            <line x1="250" y1="231" x2="280" y2="280" class="forca-parte" />
+          </svg>
+        </div>
+
+        <div class="container-letras">
+          <div class="letras-certas"></div>
+          <div class="underline"></div>
+          <div class="letras-erradas"></div>
+        </div>
+
+        <div class="container-botoes">
+          <button class="botao-novo-jogo">Novo jogo</button>
+          <button class="botao-desistir">Desistir</button>
+        </div>
+      </section>
+
+      <div class="popup-container">
+        <div class="popup">
+          <h2 id="mensagem"></h2>
+          <button id="btn-jogar" onclick="jogoNovo()">Jogar novamente</button>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <p>Desenvolvido por Karliana Diaz</p>
+    </footer>
+
+    <script src="js/inicio.js"></script>
+    <script src="js/cadastro-palavra.js"></script>
+    <script src="js/adivinha-palavra.js"></script>
+    <script src="js/functions.js"></script>
+  </body>
+</html>

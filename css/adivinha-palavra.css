@@ -1,0 +1,186 @@
+#adivinha-palavra {
+  max-width: 375px;
+  display: none;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.container-forca {
+  margin: 0 auto;
+}
+
+svg.forca {
+  width: auto;
+  height: 351px;
+  margin: 64px 0 40px 0;
+}
+
+.forca {
+  fill: transparent;
+  stroke: #0a3871;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.forca-parte {
+  display: none;
+}
+
+.container-letras {
+  width: 303px;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 36px 56px 36px;
+}
+
+.container-letras div:nth-child(2) {
+  margin-bottom: 24px;
+}
+
+.container-letras div:nth-child(odd) {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 150%;
+  text-align: center;
+}
+
+.underline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.underline svg:nth-child(n + 7):nth-child(-n + 20) {
+  margin-top: 45px;
+}
+
+.underline svg {
+  display: inline-block;
+  width: 30px;
+  height: 10px;
+  margin-left: 16px;
+  fill: transparent;
+  stroke: #0a3871;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.letras-certas {
+  height: 36px;
+  color: #0a3871;
+  letter-spacing: 1rem;
+}
+
+.letras-certas span:nth-child(n + 7):nth-child(-n + 8) {
+  margin-top: 20px;
+}
+
+.letras-certas span {
+  display: inline-block;
+  width: 30px;
+  letter-spacing: normal;
+  margin-left: 16px;
+  text-transform: uppercase;
+}
+
+.letras-erradas {
+  color: #495057;
+  letter-spacing: 24px;
+  margin-bottom: 56px;
+  text-transform: uppercase;
+}
+
+#palavra-secreta {
+  max-width: 100%;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 150%;
+  text-align: center;
+  color: var(--backgroud-azul-botao);
+  text-transform: uppercase;
+}
+
+.container-botoes {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 16px;
+}
+
+.container-botoes button {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 19px;
+  padding: 24px;
+  border-radius: 24px;
+  text-align: center;
+  height: 67px;
+  margin: 0 16px 24px;
+}
+
+.botao-novo-jogo {
+  background-color: var(--backgroud-azul-botao);
+  color: var(--branco);
+  border: 1px solid var(--backgroud-azul-botao);
+}
+
+.botao-desistir {
+  background-color: var(--backgroud-azul);
+  color: var(--backgroud-azul-botao);
+  border: 1px solid var(--backgroud-azul-botao);
+}
+
+@media only screen and (min-width: 768px) {
+  #adivinha-palavra {
+    min-width: 768px;
+  }
+
+  .container-letras {
+    width: auto;
+    height: 220px;
+    margin: 0;
+  }
+
+  .container-letras div:nth-child(1) {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .underline {
+    display: inline;
+    width: auto;
+  }
+
+  .underline svg {
+    width: 60px;
+  }
+
+  .letras-certas span {
+    width: 60px;
+  }
+
+  .letras-erradas {
+    height: 30px;
+  }
+
+  .container-botoes {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .botao-novo-jogo {
+    width: calc(50% - 12px);
+  }
+
+  .botao-desistir {
+    width: calc(50% - 12px);
+  }
+}
